@@ -1,5 +1,7 @@
 const uniqBy = (arr, key) => {
-  return [...new Map(arr.map((item) => [item[key], item])).values()];
+  let newArry = arr.map((item) => [item[key], item]);
+  let arrMap = new Map(newArry);
+  return [...arrMap.values()];
 };
 
 const singers = [
