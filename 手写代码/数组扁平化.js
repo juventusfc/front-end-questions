@@ -1,3 +1,4 @@
+// 根据深度拍平
 // const flatten = (arr, deep = 1) => {
 //   return arr.reduce((accumulator, currentValue) => {
 //     return Array.isArray(currentValue) && deep > 1
@@ -6,6 +7,7 @@
 //   }, []);
 // };
 
+// 全部拍平
 const flatten = (arr) => {
   return arr.reduce((accumulator, currentValue) => {
     return Array.isArray(currentValue)
