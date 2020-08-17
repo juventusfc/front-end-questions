@@ -16,17 +16,18 @@ function find(list, f) {
 }
 
 function deepClone(obj, cache = []) {
-  // just return if obj is immutable value
+  // 1. just return if obj is immutable value
   if (obj === null || typeof obj !== "object") {
     return obj;
   }
 
-  // if obj is hit, it is in circular structure
+  // 2. if obj is hit, it is in circular structure
   const hit = find(cache, (c) => c.original === obj);
   if (hit) {
     return hit.copy;
   }
 
+  // 3. generate a new copy
   const copy = Array.isArray(obj) ? [] : {};
   // put the copy into cache at first
   // because we want to refer it in recursive deepCopy
